@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,6 +50,7 @@ public class HomePage extends AppCompatActivity {
         Button btn1 = findViewById(R.id.settings_btn);
         Button btn2 = findViewById(R.id.exit_btn);
         Button btn3 = findViewById(R.id.scoreboardButton);
+        TextView text = findViewById(R.id.comment_txt);
 
 
         if (isSoundEnabled && !isServiceBound) {
@@ -77,6 +79,12 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openScoreBoard();
+            }
+        });
+        text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openComment();
             }
         });
     }
@@ -129,6 +137,10 @@ public class HomePage extends AppCompatActivity {
     public void Exit() {
         finishAffinity();
     }
-
+    private void openComment() {
+        // Navigate to the desired layout page
+        Intent intent = new Intent(this, CommentActivity.class);
+        startActivity(intent);
+    }
 
 }

@@ -27,6 +27,7 @@
         <activity android:name=".Settings" />
         <activity android:name=".ChooseQuizGame" />
         <activity android:name=".ScoreboardActivity" />
+        <activity android:name=".CommentActivity" />
         <service
             android:name=".BackgroundMusicService"
             android:enabled="true"
