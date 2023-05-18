@@ -62,6 +62,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="@color/purple"
+            android:textColor="@color/white"
             android:text="@string/scoreboard"/>
 
 
@@ -106,6 +107,7 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="normal" />
+
 
 
 </RelativeLayout>

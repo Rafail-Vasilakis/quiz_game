@@ -42,23 +42,21 @@
             android:textStyle="bold" />
 
 
+        <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/purple"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:id="@+id/submit_btn"/>
+
+        <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/purple"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:id="@+id/back_btn"/>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/submit_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
-        android:layout_marginBottom="422dp"
-        android:backgroundTint="@color/purple"
-        android:text="@string/submit"
-        android:textColor="@color/white" />
 
-    <Button android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple"
-        android:layout_marginTop="550dp"
-        android:text="@string/back"
-        android:textColor="@color/white"
-        android:id="@+id/back_btn"/>
 </RelativeLayout>
