@@ -1,80 +1,134 @@
 package com.example.quizapp;
 
+import android.app.Service;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.ServiceConnection;
+import android.media.MediaPlayer;
+import android.os.Binder;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomePage extends AppCompatActivity {
 
-    Button movies, games, sports, history;
+    private boolean isSoundEnabled;
+    private BackgroundMusicService musicService;
+    private boolean isServiceBound;
 
-    Button exitBtn;
+    private ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName className, IBinder service) {
+            BackgroundMusicService.LocalBinder binder = (BackgroundMusicService.LocalBinder) service;
+            musicService = binder.getService();
+            isServiceBound = true;
+            if (isSoundEnabled) {
+                musicService.startMusic();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+            isServiceBound = false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
 
-        Button btn = findViewById(R.id.movies_btn);
-        Button btn1 = findViewById(R.id.games_btn);
-        Button btn2 = findViewById(R.id.sports_btn);
-        Button btn3 = findViewById(R.id.history_btn);
+        isSoundEnabled = true; // Set your sound enabled preference here
+
+        Button btn = findViewById(R.id.play_btn);
+        Button btn1 = findViewById(R.id.settings_btn);
+        Button btn2 = findViewById(R.id.exit_btn);
+        Button btn3 = findViewById(R.id.scoreboardButton);
+
+
+        if (isSoundEnabled && !isServiceBound) {
+            bindMusicService();
+        }
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btn.setBackgroundColor(Color.MAGENTA);
-                openMain();
+                openchoosequizpage();
             }
-
         });
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn1.setBackgroundColor(Color.MAGENTA);
-                openGameQuiz();
+                openSettings();
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn2.setBackgroundColor(Color.MAGENTA);
-                openSportsQuiz();
+                Exit();
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn3.setBackgroundColor(Color.MAGENTA);
-                openHistoryQuiz();
+                openScoreBoard();
             }
         });
     }
 
+    private void bindMusicService() {
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        isSoundEnabled = true; // Get your sound enabled preference here
+        if (isSoundEnabled && isServiceBound) {
+            musicService.startMusic();
+        }
+    }
 
-    public void openMain() {
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (!isSoundEnabled && isServiceBound) {
+            musicService.pauseMusic();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (isServiceBound) {
+            unbindService(serviceConnection);
+            isServiceBound = false;
+        }
+    }
+
+    public void openchoosequizpage() {
         // Navigate to the desired layout page
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, ChooseQuizGame.class);
         startActivity(intent);
+    }
+    public void  openScoreBoard() {
+        // Navigate to the desired layout page
+        Intent intent = new Intent(this, ScoreboardActivity.class);
+        startActivity(intent);
+    }
+    public void openSettings() {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+    public void Exit() {
+        finishAffinity();
     }
 
-    public void openGameQuiz() {
-        Intent intent = new Intent(this, GamesQuiz.class);
-        startActivity(intent);
-    }
 
-    public void openSportsQuiz() {
-        Intent intent = new Intent(this, SportsQuiz.class);
-        startActivity(intent);
-    }
-
-    public void openHistoryQuiz() {
-        Intent intent = new Intent(this, HistoryQuiz.class);
-        startActivity(intent);
-    }
 }

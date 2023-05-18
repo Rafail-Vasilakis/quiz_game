@@ -24,6 +24,13 @@
         <activity android:name=".GamesQuiz" />
         <activity android:name=".SportsQuiz" />
         <activity android:name=".HistoryQuiz" />
+        <activity android:name=".Settings" />
+        <activity android:name=".ChooseQuizGame" />
+        <activity android:name=".ScoreboardActivity" />
+        <service
+            android:name=".BackgroundMusicService"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

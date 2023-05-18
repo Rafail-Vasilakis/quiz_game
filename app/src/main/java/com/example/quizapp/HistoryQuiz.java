@@ -1,6 +1,7 @@
 package com.example.quizapp;
 
 import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -46,7 +47,6 @@ public class HistoryQuiz extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-
         ansA.setBackgroundColor(Color.WHITE);
         ansB.setBackgroundColor(Color.WHITE);
         ansC.setBackgroundColor(Color.WHITE);
@@ -58,16 +58,28 @@ public class HistoryQuiz extends AppCompatActivity implements View.OnClickListen
                 score++;
             }
             currentQuestionIndex++;
-            loadNewQuestion();
 
-
+            if (currentQuestionIndex == totalQuestion) {
+                saveScore();
+                finishQuiz();
+            } else {
+                loadNewQuestion();
+            }
         } else {
             //choices button clicked
             selectedAnswer = clickedButton.getText().toString();
             clickedButton.setBackgroundColor(Color.MAGENTA);
-
         }
+    }
+    private void saveScore() {
+        SharedPreferences sharedPreferences = getSharedPreferences("Scores", MODE_PRIVATE);
+        int previousScore = sharedPreferences.getInt("Quiz4Score", 0);
 
+        if (score > previousScore) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("Quiz4Score", score);
+            editor.apply();
+        }
     }
 
     void loadNewQuestion() {
