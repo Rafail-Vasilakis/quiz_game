@@ -51,9 +51,10 @@
             android:layout_marginBottom="5dp"
             android:backgroundTint="@color/white"
             android:text="Movies"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:onClick="movies_btn_clicked"/>
 
-    <Button android:layout_width="match_parent"
+        <Button android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:backgroundTint="@color/white"
