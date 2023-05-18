@@ -1,7 +1,10 @@
 package com.example.quizapp;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +23,15 @@ public class ScoreboardActivity extends AppCompatActivity {
 
         // Display the best scores
         displayBestScores();
+
+        Button btn = findViewById(R.id.back_btn);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openHomePage();
+            }
+        });
     }
 
     private void displayBestScores() {
@@ -51,6 +63,12 @@ public class ScoreboardActivity extends AppCompatActivity {
         // Display the scores in the TextView
         scoresTextView.setText(scoresBuilder.toString());
     }
+
+    public void openHomePage() {
+        Intent intent = new Intent(this, HomePage.class);
+        startActivity(intent);
+    }
+
 }
 
 
