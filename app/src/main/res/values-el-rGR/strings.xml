@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Welcome">Καλώς ήρθατε στο Quizzify</string>
+    <string name="app_name">QuizApp</string>
+    <string name="play">Έναρξη</string>
+    <string name="settings">Ρυθμίσεις</string>
+    <string name="exit">Έξοδος</string>
+    <string name="comment_us">Προσθέστε σχόλια</string>
+    <string name="scoreboard">Πίνακας αποτελεσμάτων</string>
+    <string name="choose_your_quiz">Επιλογή τύπου quiz</string>
+    <string name="movies">Ταινίες</string>
+    <string name="games">Παιχνίδια</string>
+    <string name="sports">Αθλήματα</string>
+    <string name="history">Ιστορία</string>
+    <string name="back">Πίσω</string>
+    <string name="movies_best_score">"Ταινίες Καλύτερη Βαθμολογία: "</string>
+    <string name="games_best_score">"Παιχνίδια Καλύτερη Βαθμολογία: "</string>
+    <string name="sports_best_score">"Αθλήματα Καλύτερη Βαθμολογία: "</string>
+    <string name="history_best_score">"Ιστορία Καλύτερη Βαθμολογία:  "</string>
+    <string name="enable_sound">Ενεργοποίηση ήχου</string>
+    <string name="enable_notifications">Ενεργοποίηση Ειδοποιήσεων</string>
+    <string name="volume">Ένταση</string>
+    <string name="apply">Αποθήκευση</string>
+    <string name="share_your_thoughts">Μοιραστείτε τις απόψεις σας</string>
+    <string name="submit">Υποβολή</string>
+    <string name="total_questions">"Συνολικές Ερωτήσεις : "</string>
+    <string name="passed">Πέρασες</string>
+    <string name="failed">Απέτυχες</string>
+    <string name="score_is">Συνολικά βρήκες</string>
+    <string name="out_of">στα</string>
+    <string name="restart">Επανάληψη</string>
+</resources>

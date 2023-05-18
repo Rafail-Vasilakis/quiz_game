@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/total_questions"
-        android:text="Total Questions"
+        android:text="@string/total_questions"
         android:layout_centerHorizontal="true"
         android:textSize="20dp"/>
 
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/purple"
-        android:text="Submit"
+        android:text="@string/submit"
         android:layout_below="@id/choice_layout"
         android:textColor="@color/white"
         android:id="@+id/submit_btn"/>

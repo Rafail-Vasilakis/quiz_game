@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
+        android:text="@string/settings"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="24dp"
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="8dp"
-        android:text="Enable Sound"
+        android:text="@string/enable_sound"
         android:textColor="@android:color/white"
         android:textSize="25dp" />
 
@@ -34,7 +34,7 @@
         android:id="@+id/notificationsCheckbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enable Notifications"
+        android:text="@string/enable_notifications"
         android:textSize="25dp"
         android:textColor="@android:color/white"
         android:paddingVertical="8dp" />
@@ -48,7 +48,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Volume"
+        android:text="@string/volume"
         android:textSize="25dp"
         android:textColor="@android:color/white" />
 
@@ -71,7 +71,7 @@
         android:id="@+id/applyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Apply"
+        android:text="@string/apply"
         android:onClick="applyChanges"
         android:textAlignment="center"
         android:layout_marginStart="130dp"

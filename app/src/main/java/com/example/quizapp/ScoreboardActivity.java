@@ -45,19 +45,19 @@ public class ScoreboardActivity extends AppCompatActivity {
 
         // Retrieve and display the best score for Quiz 1
         int quiz1Score = sharedPreferences.getInt("Quiz1Score", 0);
-        scoresBuilder.append("Movies Best Score: ").append(quiz1Score).append("\n");
+        scoresBuilder.append(getString(R.string.movies_best_score)).append(quiz1Score).append("\n");
 
         // Retrieve and display the best score for Quiz 2
         int quiz2Score = sharedPreferences.getInt("Quiz2Score", 0);
-        scoresBuilder.append("Games Best Score: ").append(quiz2Score).append("\n");
+        scoresBuilder.append(getString(R.string.games_best_score)).append(quiz2Score).append("\n");
 
         // Retrieve and display the best score for Quiz 3
         int quiz3Score = sharedPreferences.getInt("Quiz3Score", 0);
-        scoresBuilder.append("Sports Best Score: ").append(quiz3Score).append("\n");
+        scoresBuilder.append(getString(R.string.sports_best_score)).append(quiz3Score).append("\n");
 
         // Retrieve and display the best score for Quiz 3
         int quiz4Score = sharedPreferences.getInt("Quiz4Score", 0);
-        scoresBuilder.append("History Best Score: ").append(quiz3Score).append("\n");
+        scoresBuilder.append(getString(R.string.history_best_score)).append(quiz3Score).append("\n");
 
 
         // Display the scores in the TextView

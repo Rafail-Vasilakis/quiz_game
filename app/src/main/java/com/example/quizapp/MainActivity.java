@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ansD.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
 
-        totalQuestionsTextView.setText("Total questions : " + totalQuestion);
+        totalQuestionsTextView.setText(getString(R.string.total_questions) + totalQuestion);
 
         loadNewQuestion();
     }
@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         questionTextView.setText(QuestionAnswer.movies_questions[currentQuestionIndex]);
+        questionTextView.setText(QuestionAnswer.movies_questionsgr[currentQuestionIndex]);
         ansA.setText(QuestionAnswer.movies_choices[currentQuestionIndex][0]);
         ansB.setText(QuestionAnswer.movies_choices[currentQuestionIndex][1]);
         ansC.setText(QuestionAnswer.movies_choices[currentQuestionIndex][2]);
@@ -103,15 +104,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     void finishQuiz() {
         String passStatus = "";
         if (score > totalQuestion * 0.60) {
-            passStatus = "Passed";
+            passStatus = getString(R.string.passed);
         } else {
-            passStatus = "Failed";
+            passStatus = getString(R.string.failed);
         }
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score is " + score + " out of " + totalQuestion)
-                .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
+                .setMessage(getString(R.string.score_is) + " " + score + " " + getString(R.string.out_of) + " " + totalQuestion)
+                .setPositiveButton(R.string.restart, (dialogInterface, i) -> restartQuiz())
                 .setCancelable(false)
                 .show();
 

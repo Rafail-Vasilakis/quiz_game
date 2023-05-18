@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">QuizApp</string>
+    <string name="Welcome">Welcome to Quizzify</string>
+    <string name="play">Play</string>
+    <string name="scoreboard">Scoreboard</string>
+    <string name="settings">Settings</string>
+    <string name="exit">Exit</string>
+    <string name="comment_us">Comment us</string>
+    <string name="choose_your_quiz">Choose your quiz</string>
+    <string name="movies">Movies</string>
+    <string name="games">Games</string>
+    <string name="sports">Sports</string>
+    <string name="history">History</string>
+    <string name="back">Back</string>
+    <string name="movies_best_score">"Movies Best Score: "</string>
+    <string name="games_best_score">"Games Best Score: "</string>
+    <string name="sports_best_score">"Sports Best Score: "</string>
+    <string name="history_best_score">"History Best Score: "</string>
+    <string name="enable_sound">Enable Sound</string>
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="volume">Volume</string>
+    <string name="apply">Apply</string>
+    <string name="share_your_thoughts">Share your thoughts</string>
+    <string name="submit">Submit</string>
+    <string name="total_questions">"Total questions : "</string>
+    <string name="passed">Passed</string>
+    <string name="failed">Failed</string>
+    <string name="score_is">"Score is "</string>
+    <string name="out_of">" out of "</string>
+    <string name="restart">Restart</string>
 </resources>

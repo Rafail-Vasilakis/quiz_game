@@ -18,7 +18,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Welcome to Quizzify"
+        android:text="@string/Welcome"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="24dp"
@@ -49,7 +49,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="@color/purple"
-            android:text="Play"
+            android:text="@string/play"
             android:textColor="@color/white"/>
 
         <Button
@@ -62,7 +62,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="@color/purple"
-            android:text="Scoreboard"/>
+            android:text="@string/scoreboard"/>
 
 
         <Button android:layout_width="match_parent"
@@ -72,7 +72,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
-            android:text="Settings"
+            android:text="@string/settings"
             android:layout_below="@id/choice_layout"
             android:textColor="@color/white"
             android:id="@+id/settings_btn"/>
@@ -84,7 +84,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
-            android:text="Exit"
+            android:text="@string/exit"
             android:layout_below="@id/choice_layout"
             android:textColor="@color/white"
             android:id="@+id/exit_btn"/>
@@ -101,7 +101,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:clickable="true"
-        android:text="Comment us"
+        android:text="@string/comment_us"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20dp"

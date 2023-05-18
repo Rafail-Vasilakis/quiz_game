@@ -8,6 +8,12 @@ public class QuestionAnswer {
             "Who directed the 2019 film 'Joker'?",
             "Which actor portrayed the character of Neo in the movie 'The Matrix'?"
     };
+    public static String movies_questionsgr[] = {
+            "Ποιος ηθοποιός υποδύθηκε τον χαρακτήρα του Tony Stark στο Marvel Cinematic Universe;",
+            "Ποια ταινία κέρδισε το Βραβείο Καλύτερης Ταινίας στα Όσκαρ του 2020;",
+            "Ποιος σκηνοθέτης σκηνοθέτησε την ταινία 'Joker' του 2019;",
+            "Ποιος ηθοποιός υποδύθηκε τον χαρακτήρα του Neo στην ταινία 'The Matrix';"
+    };
 
     public static String movies_choices[][] = {
             {"Robert Downey Jr"," Chris Hemsworth"," Chris Evans","Mark Ruffalo"},
@@ -30,6 +36,14 @@ public class QuestionAnswer {
             "Which video game console is produced by Sony?"
     };
 
+    public static String game_questionsgr[] ={
+            "Σε ποια σειρά βιντεοπαιχνιδιών εμφανίζεται ο χαρακτήρας με το όνομα Μάριο;",
+            "Ποια σειρά βιντεοπαιχνιδιών αναπτύσσεται από την Rockstar Games;",
+            "Στο παιχνίδι 'Fortnite', ποια από τις παρακάτω επιλογές ΔΕΝ είναι διαθέσιμος χαρακτήρας;",
+            "Ποια κονσόλα βιντεοπαιχνιδιών παράγεται από την Sony;"
+    };
+
+
     public static String game_choices[][] = {
             {"The Legend of Zelda","Super Mario","Halo","Grand Theft Auto"},
             {"Assassin's Creed","Call of Duty","Grand Theft Auto","Minecraft"},
@@ -51,6 +65,13 @@ public class QuestionAnswer {
             "Which tennis player has won the most Grand Slam singles titles?"
     };
 
+    public static String sport_questionsgr[] ={
+            "Ποιος παίκτης έχει τα περισσότερα γκολ στην ιστορία του Παγκοσμίου Κυπέλλου της FIFA;",
+            "Ποια ομάδα έχει κερδίσει τα περισσότερα πρωταθλήματα Super Bowl στην ιστορία του NFL;",
+            "Ποιος κατέχει το ρεκόρ για τα περισσότερα home runs σε μία μόνο σεζόν του Major League Baseball (MLB);",
+            "Ποιος τενίστας έχει κερδίσει τα περισσότερα Grand Slam τίτλους στο απλό;"
+    };
+
     public static String sport_choices[][] = {
             {"Cristiano Ronaldo","Lionel Messi","Pele","Diego Maradona"},
             {"New England Patriots","Pittsburgh Steelers","Dallas Cowboys","San Francisco 49ers"},
@@ -70,6 +91,13 @@ public class QuestionAnswer {
             "Which famous scientist developed the theory of relativity?",
             "Which ancient civilization built the Great Pyramids of Giza?",
             "What year did World War II end?"
+    };
+
+    public static String history_questionsgr[] ={
+            "Ποιος ήταν ο πρώτος Πρόεδρος των Ηνωμένων Πολιτειών;",
+            "Ποιος διάσημος επιστήμονας ανέπτυξε τη θεωρία της σχετικότητας;",
+            "Ποια αρχαία πολιτισμική πολιτεία κατασκεύασε τις Μεγάλες Πυραμίδες της Γκίζας;",
+            "Το ποιο έτος τελείωσε ο Β' Παγκόσμιος Πόλεμος;"
     };
 
     public static String history_choices[][] = {
