@@ -82,20 +82,29 @@ public class GamesQuiz extends AppCompatActivity implements View.OnClickListener
         }
     }
     void loadNewQuestion() {
-
         if (currentQuestionIndex == totalQuestion) {
             finishQuiz();
             return;
         }
 
-        questionTextView.setText(QuestionAnswer.game_questions[currentQuestionIndex]);
-        questionTextView.setText(QuestionAnswer.game_questionsgr[currentQuestionIndex]);
+        String selectedLanguage = getResources().getConfiguration().locale.getLanguage();
+        String question;
+
+        if (selectedLanguage.equals("el")) {
+            // Greek language
+            question = QuestionAnswer.game_questionsgr[currentQuestionIndex];
+        } else {
+            // English language (default)
+            question = QuestionAnswer.game_questions[currentQuestionIndex];
+        }
+
+        questionTextView.setText(question);
         ansA.setText(QuestionAnswer.game_choices[currentQuestionIndex][0]);
         ansB.setText(QuestionAnswer.game_choices[currentQuestionIndex][1]);
         ansC.setText(QuestionAnswer.game_choices[currentQuestionIndex][2]);
         ansD.setText(QuestionAnswer.game_choices[currentQuestionIndex][3]);
-
     }
+
 
     void finishQuiz() {
         String passStatus = "";

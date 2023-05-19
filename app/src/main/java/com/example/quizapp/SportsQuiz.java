@@ -84,20 +84,29 @@ public class SportsQuiz extends AppCompatActivity implements View.OnClickListene
     }
 
     void loadNewQuestion() {
-
         if (currentQuestionIndex == totalQuestion) {
             finishQuiz();
             return;
         }
 
-        questionTextView.setText(QuestionAnswer.sport_questions[currentQuestionIndex]);
-        questionTextView.setText(QuestionAnswer.sport_questionsgr[currentQuestionIndex]);
+        String selectedLanguage = getResources().getConfiguration().locale.getLanguage();
+        String question;
+
+        if (selectedLanguage.equals("el")) {
+            // Greek language
+            question = QuestionAnswer.sport_questionsgr[currentQuestionIndex];
+        } else {
+            // English language (default)
+            question = QuestionAnswer.sport_questions[currentQuestionIndex];
+        }
+
+        questionTextView.setText(question);
         ansA.setText(QuestionAnswer.sport_choices[currentQuestionIndex][0]);
         ansB.setText(QuestionAnswer.sport_choices[currentQuestionIndex][1]);
         ansC.setText(QuestionAnswer.sport_choices[currentQuestionIndex][2]);
         ansD.setText(QuestionAnswer.sport_choices[currentQuestionIndex][3]);
-
     }
+
 
     void finishQuiz() {
         String passStatus = "";

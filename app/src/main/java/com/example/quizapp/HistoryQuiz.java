@@ -83,20 +83,29 @@ public class HistoryQuiz extends AppCompatActivity implements View.OnClickListen
     }
 
     void loadNewQuestion() {
-
         if (currentQuestionIndex == totalQuestion) {
             finishQuiz();
             return;
         }
 
-        questionTextView.setText(QuestionAnswer.history_questions[currentQuestionIndex]);
-        questionTextView.setText(QuestionAnswer.history_questionsgr[currentQuestionIndex]);
+        String selectedLanguage = getResources().getConfiguration().locale.getLanguage();
+        String question;
+
+        if (selectedLanguage.equals("el")) {
+            // Greek language
+            question = QuestionAnswer.history_questionsgr[currentQuestionIndex];
+        } else {
+            // English language (default)
+            question = QuestionAnswer.history_questions[currentQuestionIndex];
+        }
+
+        questionTextView.setText(question);
         ansA.setText(QuestionAnswer.history_choices[currentQuestionIndex][0]);
         ansB.setText(QuestionAnswer.history_choices[currentQuestionIndex][1]);
         ansC.setText(QuestionAnswer.history_choices[currentQuestionIndex][2]);
         ansD.setText(QuestionAnswer.history_choices[currentQuestionIndex][3]);
-
     }
+
 
     void finishQuiz() {
         String passStatus = "";

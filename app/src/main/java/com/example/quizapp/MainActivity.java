@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView totalQuestionsTextView;
@@ -86,20 +88,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     void loadNewQuestion() {
-
         if (currentQuestionIndex == totalQuestion) {
             finishQuiz();
             return;
         }
 
-        questionTextView.setText(QuestionAnswer.movies_questions[currentQuestionIndex]);
-        questionTextView.setText(QuestionAnswer.movies_questionsgr[currentQuestionIndex]);
+        String selectedLanguage = getResources().getConfiguration().locale.getLanguage();
+        String question;
+
+        if (selectedLanguage.equals("el")) {
+            // Greek language
+            question = QuestionAnswer.movies_questionsgr[currentQuestionIndex];
+        } else {
+            // English language (default)
+            question = QuestionAnswer.movies_questions[currentQuestionIndex];
+        }
+
+        questionTextView.setText(question);
         ansA.setText(QuestionAnswer.movies_choices[currentQuestionIndex][0]);
         ansB.setText(QuestionAnswer.movies_choices[currentQuestionIndex][1]);
         ansC.setText(QuestionAnswer.movies_choices[currentQuestionIndex][2]);
         ansD.setText(QuestionAnswer.movies_choices[currentQuestionIndex][3]);
-
     }
+
 
     void finishQuiz() {
         String passStatus = "";
